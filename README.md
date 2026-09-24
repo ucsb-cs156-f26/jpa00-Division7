@@ -82,3 +82,20 @@ If you use `ls -a` on this directory, you should the following hidden files:
   See [https://ucsb-cs156.github.io/topics/git_gitignore.html](https://ucsb-cs156.github.io/topics/git/git_gitignore.html)
   information.
 * `.java-version` stores the version of Java that should be used for the code in this project.  Some tools look for this file to select the appropriate Java version.
+* `.sdkmanrc` is used by SDKMAN to automatically select the correct Java version for this project.
+
+## Java 25 setup with SDKMAN
+
+This project follows the course instructions for Java 25.0.4, using the recommended `25.0.4-tem` distribution via SDKMAN, with Maven 3.9.14.
+
+If you use SDKMAN, the setup is:
+
+```bash
+sdk install java 25.0.4-tem
+sdk use java 25.0.4-tem
+sdk env install
+java -version
+./mvnw -q -DskipTests package
+```
+
+The project includes a `.java-version` file and an `.sdkmanrc` file so that the correct Java version is selected automatically when SDKMAN is present.
